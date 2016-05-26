@@ -68,7 +68,26 @@
 		.bs-callout-danger h4{
 			color: #d9534f;
 		}
-
+        .photo_viewer .snapt img{
+            opacity: 0.3;
+        }
+        .photo_viewer .snapt img:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+        .photo_viewer .snapt .img_actived{
+            opacity: 1;
+            
+        }
+        .modal-dialog{
+            position: relative;
+            display: table; //This is important 
+            overflow-y: auto;    
+            overflow-x: auto;
+            width: auto;
+            min-width: 300px;   
+        }
+        
 
     </style>
 </head>
@@ -230,16 +249,16 @@
                                     <div class="snapt" style="margin : 0 auto; margin-top : 10px">
                                         <ul class="list-inline">
                                             <li>
-                                                <img src="images/one_small.jpg" style="width:100px; height:80px;" big="one_big.jpg" index = 0 />
+                                                <img src="../../static/images/one_small.jpg" style="width:100px; height:80px;" big="one_big.jpg" index = 0 />
                                             </li>
                                             <li>
-                                                <img src="images/two_small.jpg" style="width:100px; height:80px;" big="two_big.jpg" index = 1 />
+                                                <img src="../../static/images/two_small.jpg" style="width:100px; height:80px;" big="two_big.jpg" index = 1 />
                                             </li>
                                             <li>
-                                                <img src="images/three_small.jpg" style="width:100px; height:80px;" big="three_big.jpg" index = 2 />
+                                                <img src="../../static/images/three_small.jpg" style="width:100px; height:80px;" big="three_big.jpg" index = 2 />
                                             </li>
                                             <li>
-                                                <img src="images/four_small.jpg" style="width:100px; height: 80px;" big="four_big.jpg" index = 3 />
+                                                <img src="../../static/images/four_small.jpg" style="width:100px; height: 80px;" big="four_big.jpg" index = 3 />
                                             </li>
                                         </ul>
                                     </div>
@@ -279,7 +298,7 @@
                         <div class="modal-content">
         
                             <div class="modal-body">
-                                <img src="images/two_big.jpg">
+                                <img src="../../static/images/two_big.jpg">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -326,7 +345,7 @@
             }
         }
         function show_big_pic(pic) {
-            $(".photo_viewer .big_picture img").attr("src", "images/" + pic);
+            $(".photo_viewer .big_picture img").attr("src", "../../static/images/" + pic);
             $(".photo_viewer .big_picture img").attr("width", "600px");
             $(".photo_viewer .big_picture img").attr("height", "600px");
         }
@@ -362,7 +381,7 @@
         $(".raw-picture").click(function(){
             $this = $(".photo_viewer .snapt img:eq(" + actived_index + ")");
             var big_one = $this.attr("big");
-            $(".modal-body img").attr("src", "images/" + big_one);
+            $(".modal-body img").attr("src", "../../static/images/" + big_one);
             $("#myModal").modal();
         });
         
